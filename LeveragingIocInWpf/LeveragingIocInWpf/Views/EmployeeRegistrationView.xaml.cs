@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LeveragingIocInWpf.Interfaces.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace LeveragingIocInWpf.Views
     /// <summary>
     /// Interaction logic for EmployeeRegistrationView.xaml
     /// </summary>
-    public partial class EmployeeRegistrationView : UserControl
+    public partial class EmployeeRegistrationView : UserControl, IEmployeeRegistrationView
     {
         public EmployeeRegistrationView()
         {

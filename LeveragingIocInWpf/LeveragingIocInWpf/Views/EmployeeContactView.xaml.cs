@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LeveragingIocInWpf.Interfaces.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,11 +17,11 @@ using System.Windows.Shapes;
 namespace LeveragingIocInWpf.Views
 {
     /// <summary>
-    /// Interaction logic for EmployeeContact.xaml
+    /// Interaction logic for EmployeeContactView.xaml
     /// </summary>
-    public partial class EmployeeContact : UserControl
+    public partial class EmployeeContactView : UserControl, IEmployeeContactView
     {
-        public EmployeeContact()
+        public EmployeeContactView()
         {
             InitializeComponent();
         }

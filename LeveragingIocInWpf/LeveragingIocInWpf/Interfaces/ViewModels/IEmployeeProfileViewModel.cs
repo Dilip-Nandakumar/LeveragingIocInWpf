@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeveragingIocInWpf.Interfaces.ViewModels
 {
-    class IEmployeeProfileViewModel : IViewModel
+    interface IEmployeeProfileViewModel : IViewModel
     {
     }
 }

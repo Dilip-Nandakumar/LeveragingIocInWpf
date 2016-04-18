@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeveragingIocInWpf.Interfaces.ViewModels
 {
-    interface IShellViewModel
+    interface IShellViewModel : IViewModel
     {
     }
 }

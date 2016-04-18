@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeveragingIocInWpf.Interfaces.Views
 {
-    interface IEmployeeContactView
+    public interface IEmployeeContactView : IView
     {
     }
 }
