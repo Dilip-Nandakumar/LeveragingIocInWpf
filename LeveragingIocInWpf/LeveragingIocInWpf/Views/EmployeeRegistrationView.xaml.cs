@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LeveragingIocInWpf
+namespace LeveragingIocInWpf.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for EmployeeRegistrationView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class EmployeeRegistrationView : UserControl
     {
-        public MainWindow()
+        public EmployeeRegistrationView()
         {
             InitializeComponent();
         }
