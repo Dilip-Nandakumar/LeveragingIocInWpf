@@ -1,4 +1,5 @@
-﻿using LeveragingIocInWpf.Interfaces.Views;
+﻿using LeveragingIocInWpf.Interfaces.ViewModels;
+using LeveragingIocInWpf.Interfaces.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace LeveragingIocInWpf.Views
     /// </summary>
     public partial class EmployeeContactView : UserControl, IEmployeeContactView
     {
-        public EmployeeContactView()
+        public EmployeeContactView(IEmployeeContactViewModel employeeContactViewModel)
         {
             InitializeComponent();
         }

@@ -1,4 +1,6 @@
-﻿using LeveragingIocInWpf.Interfaces.Views;
+﻿using LeveragingIocInWpf.Interfaces;
+using LeveragingIocInWpf.Interfaces.ViewModels;
+using LeveragingIocInWpf.Interfaces.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +23,20 @@ namespace LeveragingIocInWpf.Views
     /// </summary>
     public partial class EmployeeRegistrationView : UserControl, IEmployeeRegistrationView
     {
-        public EmployeeRegistrationView()
+        private IViewFactory _viewFactory;
+
+        public EmployeeRegistrationView(IEmployeeRegistrationViewModel employeeRegistrationViewModel, IViewFactory viewFactory)
         {
             InitializeComponent();
+            this._viewFactory = viewFactory;
+            employeeRegistrationViewModel.WizardChanged += this.OnWizardChanged;
+        }
+
+        private void OnWizardChanged(string viewName)
+        {
+            IView view = this._viewFactory.GetView(viewName);
+            this.WizardContainer.Children.Clear();
+            this.WizardContainer.Children.Add((UIElement)view);
         }
     }
 }

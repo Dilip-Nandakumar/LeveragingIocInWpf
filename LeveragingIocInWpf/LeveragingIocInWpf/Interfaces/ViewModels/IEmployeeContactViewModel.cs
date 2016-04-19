@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LeveragingIocInWpf.Interfaces.ViewModels
 {
-    interface IEmployeeContactViewModel : IViewModel
+    public interface IEmployeeContactViewModel : IViewModel
     {
     }
 }

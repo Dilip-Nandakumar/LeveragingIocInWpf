@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LeveragingIocInWpf.Interfaces.ViewModels
+namespace LeveragingIocInWpf.Interfaces.Views
 {
-    public interface IEmployeeProfileViewModel : IViewModel
+    public interface IEmployeeDetailsView : IView
     {
     }
 }

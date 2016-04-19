@@ -7,7 +7,7 @@ using LeveragingIocInWpf.Interfaces.ViewModels;
 
 namespace LeveragingIocInWpf.ViewModels
 {
-    class EmployeeContactViewModel : IEmployeeContactViewModel
+    public class EmployeeContactViewModel : IEmployeeContactViewModel
     {
     }
 }

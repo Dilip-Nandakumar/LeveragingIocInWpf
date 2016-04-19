@@ -34,7 +34,9 @@ namespace LeveragingIocInWpf.Views
         }
 
         private void OnChildViewSelected(string itemName)
-        {            
+        {
+            Application.Current.Resources["ScopeId"] = Guid.NewGuid();
+
             IView viewSelected = this._viewFactory.GetView(itemName);
             this.pnlWorkArea.Children.Clear();
             this.pnlWorkArea.Children.Add((UIElement)viewSelected);

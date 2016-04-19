@@ -71,6 +71,7 @@
     </Compile>
     <Compile Include="Helpers\TreeViewExtension.cs" />
     <Compile Include="Helpers\ViewMenu.cs" />
+    <Compile Include="Helpers\WizardInfo.cs" />
     <Compile Include="Interfaces\IViewFactory.cs" />
     <Compile Include="Installers\ViewsInstaller.cs" />
     <Compile Include="Interfaces\IView.cs" />
@@ -80,8 +81,11 @@
     <Compile Include="Interfaces\ViewModels\IEmployeeRegistrationViewModel.cs" />
     <Compile Include="Interfaces\ViewModels\IShellViewModel.cs" />
     <Compile Include="Interfaces\Views\IEmployeeContactView.cs" />
+    <Compile Include="Interfaces\Views\IEmployeeDepartmentView.cs" />
+    <Compile Include="Interfaces\Views\IEmployeeDetailsView.cs" />
     <Compile Include="Interfaces\Views\IEmployeeProfileView.cs" />
     <Compile Include="Interfaces\Views\IEmployeeRegistrationView.cs" />
+    <Compile Include="Interfaces\Views\IEmployeeSummaryView.cs" />
     <Compile Include="Interfaces\Views\IMainView.cs" />
     <Compile Include="Interfaces\IWindowView.cs" />
     <Compile Include="Interfaces\Views\IShellView.cs" />
@@ -96,11 +100,20 @@
     <Compile Include="Views\EmployeeContactView.xaml.cs">
       <DependentUpon>EmployeeContactView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EmployeeDepartmentView.xaml.cs">
+      <DependentUpon>EmployeeDepartmentView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeDetailsView.xaml.cs">
+      <DependentUpon>EmployeeDetailsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\EmployeeProfileView.xaml.cs">
       <DependentUpon>EmployeeProfileView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\EmployeeRegistrationView.xaml.cs">
       <DependentUpon>EmployeeRegistrationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeSummaryView.xaml.cs">
+      <DependentUpon>EmployeeSummaryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
@@ -142,11 +155,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\EmployeeDepartmentView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EmployeeDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\EmployeeProfileView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\EmployeeRegistrationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EmployeeSummaryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

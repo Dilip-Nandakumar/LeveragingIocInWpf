@@ -18,11 +18,11 @@ using System.Windows.Shapes;
 namespace LeveragingIocInWpf.Views
 {
     /// <summary>
-    /// Interaction logic for EmployeeProfileView.xaml
+    /// Interaction logic for EmployeeDepartmentView.xaml
     /// </summary>
-    public partial class EmployeeProfileView : UserControl, IEmployeeProfileView
+    public partial class EmployeeDepartmentView : UserControl, IEmployeeDepartmentView
     {
-        public EmployeeProfileView(IEmployeeProfileViewModel employeeProfileViewModel)
+        public EmployeeDepartmentView(IEmployeeRegistrationViewModel employeeRegistrationViewModel)
         {
             InitializeComponent();
         }
