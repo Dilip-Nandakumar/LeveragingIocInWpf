@@ -71,7 +71,7 @@
     </Compile>
     <Compile Include="Helpers\TreeViewExtension.cs" />
     <Compile Include="Helpers\ViewMenu.cs" />
-    <Compile Include="Installers\IViewFactory.cs" />
+    <Compile Include="Interfaces\IViewFactory.cs" />
     <Compile Include="Installers\ViewsInstaller.cs" />
     <Compile Include="Interfaces\IView.cs" />
     <Compile Include="Interfaces\IViewModel.cs" />

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace LeveragingIocInWpf.Interfaces.ViewModels
 {
-    interface IShellViewModel : IViewModel
+    public interface IShellViewModel : IViewModel
     {
+        event Action<string> ChildViewSelected;
+
+        void SelectDefaultView();
     }
 }

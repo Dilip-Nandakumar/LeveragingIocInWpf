@@ -9,9 +9,12 @@ using System.Collections.ObjectModel;
 
 namespace LeveragingIocInWpf.ViewModels
 {
-    class ShellViewModel : IShellViewModel
-    {        
+    public class ShellViewModel : IShellViewModel
+    {
+        private ViewMenu _viewSelected;
         private ObservableCollection<ViewMenu> _viewMenuItems;
+
+        public event Action<string> ChildViewSelected;
 
         public ObservableCollection<ViewMenu> ViewMenuItems
         {
@@ -26,7 +29,24 @@ namespace LeveragingIocInWpf.ViewModels
             }
         }
 
-        internal ShellViewModel()
+        public ViewMenu ViewSelected
+        {
+            get
+            {
+                return this._viewSelected;
+            }
+
+            set
+            {
+                if (this._viewSelected != value)
+                {
+                    this._viewSelected = value;
+                    this.ChildViewSelected(this._viewSelected.ItemName);
+                }
+            }
+        }
+
+        public ShellViewModel()
         {           
             List<ViewMenu> subMenus = new List<ViewMenu>();
             subMenus.Add(new ViewMenu() { MenuName = "Employee Profile", ItemName = "EmployeeProfile", ToolTip = "Employee Profile" });
@@ -34,7 +54,12 @@ namespace LeveragingIocInWpf.ViewModels
             subMenus.Add(new ViewMenu() { MenuName = "Employee Registration", ItemName = "EmployeeRegistration", ToolTip = "Employee Registration" });           
 
             this.ViewMenuItems = new ObservableCollection<ViewMenu>();            
-            this.ViewMenuItems.Add(new ViewMenu() { MenuName = "Employee", ItemName = "EmployeeProfile", ToolTip = "Settings", SubMenuItems = subMenus });
+            this.ViewMenuItems.Add(new ViewMenu() { MenuName = "Employee", ItemName = "EmployeeProfile", ToolTip = "Settings", SubMenuItems = subMenus });            
+        }
+
+        public void SelectDefaultView()
+        {
+            this.ViewSelected = this.ViewMenuItems[0];
         }
     }
 }
