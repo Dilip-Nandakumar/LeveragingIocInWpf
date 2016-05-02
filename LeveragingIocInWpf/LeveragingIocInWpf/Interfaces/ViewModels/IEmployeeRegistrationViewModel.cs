@@ -9,5 +9,7 @@ namespace LeveragingIocInWpf.Interfaces.ViewModels
     public interface IEmployeeRegistrationViewModel : IViewModel
     {
         event Action<string> WizardChanged;
+
+        void LoadWizardInfo();
     }
 }

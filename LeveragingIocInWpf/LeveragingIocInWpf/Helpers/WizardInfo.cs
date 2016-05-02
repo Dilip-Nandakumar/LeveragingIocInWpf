@@ -10,15 +10,11 @@ namespace LeveragingIocInWpf.Helpers
     {
         public string Text { get; set; }
 
-        public string Value { get; set; }
-
-        public string Description { get; set; }
-
-        public bool IsPreviousEnabled { get; set; }
+        public string Value { get; set; }                
 
         public string NextButtonText { get; set; }
 
-        public bool IsPrinterVisible { get; set; }
+        public bool IsPreviousEnabled { get; set; }
 
         public override string ToString()
         {

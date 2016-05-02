@@ -154,19 +154,15 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid Margin="10,5" VerticalAlignment="Center">
-                <ListBox Name="lbWizard"  Background="#E3E6E7" SelectionMode="Single" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" ItemsPanel="{DynamicResource WizardHeaderItemsPanelTemplate}" >
-                    <ListBoxItem>Profile</ListBoxItem>
-                    <ListBoxItem>Details</ListBoxItem>
-                    <ListBoxItem>Summary</ListBoxItem>
-                </ListBox>
+                <ListBox Name="lbWizard" ItemsSource="{Binding WizardInfoList}" SelectedItem="{Binding SelectedWizardInfo}" Background="#E3E6E7" SelectionMode="Single" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" ItemsPanel="{DynamicResource WizardHeaderItemsPanelTemplate}"/>
             </Grid>
             <Grid x:Name="WizardContainer" Margin="10,5" Grid.Row="2" />
         </Grid>
         <Grid Grid.Row="1" >
             <ListBox Name="lbBtns" BorderThickness="0" SelectedIndex="{Binding WizardButtonIndex}" SelectionMode="Single" ItemsPanel="{DynamicResource ItemsPanelTemplate_WizardButton}" Height="60" VerticalAlignment="Top">
-                <ListViewItem Content="Previous" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Width="90" Height="40" BorderThickness="1" BorderBrush="Black" />
-                <ListViewItem Content="Next" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Width="90" Height="40" BorderThickness="1" BorderBrush="Black"/>
-                <ListViewItem Content="Cancel" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Width="90" Height="40" BorderThickness="1" BorderBrush="Black"/>
+                <ListViewItem Content="Previous" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Width="90" Height="40" BorderThickness="1" BorderBrush="Black" Style="{DynamicResource WizardListViewItemStyle}"/>
+                <ListViewItem Content="{Binding NextButtonText}" IsSelected="True" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Width="90" Height="40" BorderThickness="1" BorderBrush="Black" Style="{DynamicResource WizardListViewItemStyle}"/>
+                <ListViewItem Content="Cancel" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Width="90" Height="40" BorderThickness="1" BorderBrush="Black" Style="{DynamicResource WizardListViewItemStyle}"/>
             </ListBox>
         </Grid>
     </Grid>

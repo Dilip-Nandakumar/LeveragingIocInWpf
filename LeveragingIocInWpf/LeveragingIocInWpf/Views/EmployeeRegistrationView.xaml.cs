@@ -30,6 +30,7 @@ namespace LeveragingIocInWpf.Views
             InitializeComponent();
             this._viewFactory = viewFactory;
             employeeRegistrationViewModel.WizardChanged += this.OnWizardChanged;
+            employeeRegistrationViewModel.LoadWizardInfo();            
         }
 
         private void OnWizardChanged(string viewName)
