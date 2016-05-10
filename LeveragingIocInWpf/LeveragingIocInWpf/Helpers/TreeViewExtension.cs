@@ -59,11 +59,10 @@ namespace LeveragingIocInWpf.Helpers
 
             internal void ChangeSelectedItem(object p)
             {
-                TreeViewItem item = (TreeViewItem)this.view.ItemContainerGenerator.ContainerFromItem(this.view.SelectedItem);
-
-                if (item != null)
+                if (this.view.SelectedItem == null)
                 {
-                    IEnumerable ie = ((System.Windows.Controls.ItemsControl)item).ItemsSource;
+                    TreeViewItem item = (TreeViewItem)this.view.ItemContainerGenerator.ContainerFromIndex(0);
+                    item.IsExpanded = true;
                     item.IsSelected = true;
                 }
             }

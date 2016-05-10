@@ -159,8 +159,8 @@
             <Grid x:Name="WizardContainer" Margin="10,5" Grid.Row="2" />
         </Grid>
         <Grid Grid.Row="1" >
-            <ListBox Name="lbBtns" BorderThickness="0" SelectedIndex="{Binding WizardButtonIndex}" SelectionMode="Single" ItemsPanel="{DynamicResource ItemsPanelTemplate_WizardButton}" Height="60" VerticalAlignment="Top">
-                <ListViewItem Content="Previous" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Width="90" Height="40" BorderThickness="1" BorderBrush="Black" Style="{DynamicResource WizardListViewItemStyle}"/>
+            <ListBox Name="lbBtns" BorderThickness="0" SelectedIndex="{Binding WizardButtonIndex}" SelectionMode="Single" ItemsPanel="{DynamicResource ItemsPanelTemplate_WizardButton}" Height="60" VerticalAlignment="Top" SelectionChanged="ListBoxButtons_SelectionChanged">
+                <ListViewItem Content="Previous" IsEnabled="{Binding IsPreviousEnabled}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Width="90" Height="40" BorderThickness="1" BorderBrush="Black" Style="{DynamicResource WizardListViewItemStyle}"/>
                 <ListViewItem Content="{Binding NextButtonText}" IsSelected="True" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Width="90" Height="40" BorderThickness="1" BorderBrush="Black" Style="{DynamicResource WizardListViewItemStyle}"/>
                 <ListViewItem Content="Cancel" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5" Width="90" Height="40" BorderThickness="1" BorderBrush="Black" Style="{DynamicResource WizardListViewItemStyle}"/>
             </ListBox>

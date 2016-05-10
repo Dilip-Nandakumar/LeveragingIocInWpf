@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LeveragingIocInWpf.Views"
         mc:Ignorable="d"
-        Title="MainView" Height="300" Width="300" WindowState="Maximized">
+        Title="Employee Management"
+        WindowStartupLocation="CenterScreen"         
+        HorizontalAlignment="Stretch" VerticalAlignment="Stretch" WindowState="Maximized" WindowStyle="SingleBorderWindow" ResizeMode="CanResizeWithGrip">
     <Grid x:Name="grdContainer">
 
     </Grid>

@@ -15,6 +15,8 @@ namespace LeveragingIocInWpf.ViewModels
         private int _wizardHeaderIndex;
         private string _nextButtonText;
         private bool _isPreviousEnabled;
+
+
         private WizardInfo _selectedWizardInfo;
         private List<WizardInfo> _wizardInfoList = new List<WizardInfo>();
 
@@ -32,6 +34,7 @@ namespace LeveragingIocInWpf.ViewModels
             {
                 this._selectedWizardInfo = value;
                 this.WizardChanged(this._selectedWizardInfo.Value);
+                OnPropertyChanged("SelectedWizardInfo");
             }
         }
 
@@ -84,7 +87,8 @@ namespace LeveragingIocInWpf.ViewModels
 
             set
             {
-                this._isPreviousEnabled = value;                
+                this._isPreviousEnabled = value;
+                OnPropertyChanged("IsPreviousEnabled");
             }
         }
 
@@ -104,9 +108,9 @@ namespace LeveragingIocInWpf.ViewModels
 
         public void LoadWizardInfo()
         {
-            this.WizardInfoList.Add(new WizardInfo() { Text = "DEPARTMENT", Value = "EmployeeDepartment", NextButtonText = "Next" });
-            this.WizardInfoList.Add(new WizardInfo() { Text = "DETAILS", Value = "EmployeeDetails", NextButtonText = "Next" });
-            this.WizardInfoList.Add(new WizardInfo() { Text = "SUMMARY", Value = "EmployeeSummary", NextButtonText = "Finish" });
+            this.WizardInfoList.Add(new WizardInfo() { Text = "DEPARTMENT", Value = "EmployeeDepartment", NextButtonText = "Next", IsPreviousEnabled = false });
+            this.WizardInfoList.Add(new WizardInfo() { Text = "DETAILS", Value = "EmployeeDetails", NextButtonText = "Next", IsPreviousEnabled = true });
+            this.WizardInfoList.Add(new WizardInfo() { Text = "SUMMARY", Value = "EmployeeSummary", NextButtonText = "Finish", IsPreviousEnabled = true });
 
             this.SelectedWizardInfo = this.WizardInfoList[0];
             this.LoadWizardSettings();

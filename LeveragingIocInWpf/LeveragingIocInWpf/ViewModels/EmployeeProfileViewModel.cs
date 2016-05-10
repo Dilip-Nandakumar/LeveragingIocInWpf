@@ -9,5 +9,23 @@ namespace LeveragingIocInWpf.ViewModels
 {
     public class EmployeeProfileViewModel : IEmployeeProfileViewModel
     {
+        private string _name = "Bill";
+        private string _designation = "Developer";
+
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }            
+        }
+
+        public string Designation
+        {
+            get
+            {
+                return this._designation;
+            }            
+        }
     }
 }

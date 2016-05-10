@@ -7,6 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <TextBlock FontSize="40"> Employee Contact</TextBlock>    
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MinWidth="476"/>
+            <ColumnDefinition Width="Auto" MinWidth="100"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Phone Number" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="0" Margin="150,46,0,51" Height="54" Width="288"/>
+        <TextBlock Text="{Binding PhoneNumber}" VerticalAlignment="Center"  Grid.Column="1" Grid.Row="0" Height="54" Margin="0,50,0,47"/>
+        <TextBlock Text="Address" VerticalAlignment="Center" HorizontalAlignment="Left" Grid.Row="1" Margin="150,47,0,48" Height="54" Width="211"/>
+        <TextBlock Text="{Binding Address}" VerticalAlignment="Center"  Grid.Column="1" Grid.Row="1" Height="54" Margin="0,47,0,48"/>
     </Grid>
 </UserControl>

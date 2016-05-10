@@ -33,6 +33,23 @@ namespace LeveragingIocInWpf.Views
             employeeRegistrationViewModel.LoadWizardInfo();            
         }
 
+        private void ListBoxButtons_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (((object[])e.AddedItems).Count() == 0)
+            {
+                switch (((ContentControl)e.RemovedItems[0]).Content.ToString().ToLower())
+                {
+                    case "next":
+                    case "finish":
+                        ((ListBoxItem)lbBtns.Items[1]).IsSelected = true;
+                        break;
+                    case "previous":
+                        ((ListBoxItem)lbBtns.Items[0]).IsSelected = true;
+                        break;
+                }
+            }
+        }
+
         private void OnWizardChanged(string viewName)
         {
             IView view = this._viewFactory.GetView(viewName);
