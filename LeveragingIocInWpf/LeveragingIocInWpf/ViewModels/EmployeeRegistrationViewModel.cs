@@ -15,10 +15,13 @@ namespace LeveragingIocInWpf.ViewModels
         private int _wizardHeaderIndex;
         private string _nextButtonText;
         private bool _isPreviousEnabled;
-
+        private string _name;
+        private string _designation;
+        private List<string> _departmentList = new List<string>();
 
         private WizardInfo _selectedWizardInfo;
         private List<WizardInfo> _wizardInfoList = new List<WizardInfo>();
+        private string _selectedDepartment;
 
         public event Action<string> WizardChanged;
         public event PropertyChangedEventHandler PropertyChanged;
@@ -35,6 +38,50 @@ namespace LeveragingIocInWpf.ViewModels
                 this._selectedWizardInfo = value;
                 this.WizardChanged(this._selectedWizardInfo.Value);
                 OnPropertyChanged("SelectedWizardInfo");
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return this._name;
+            }
+            set
+            {
+                this._name = value;
+            }
+        }
+
+        public string Designation
+        {
+            get
+            {
+                return this._designation;
+            }
+            set
+            {
+                this._designation = value;
+            }
+        }
+
+        public string SelectedDepartment
+        {
+            get
+            {
+                return this._selectedDepartment;
+            }
+            set
+            {
+                this._selectedDepartment = value;
+            }
+        }
+
+        public List<string> DepartmentList
+        {
+            get
+            {
+                return this._departmentList;
             }
         }
 
@@ -111,6 +158,11 @@ namespace LeveragingIocInWpf.ViewModels
             this.WizardInfoList.Add(new WizardInfo() { Text = "DEPARTMENT", Value = "EmployeeDepartment", NextButtonText = "Next", IsPreviousEnabled = false });
             this.WizardInfoList.Add(new WizardInfo() { Text = "DETAILS", Value = "EmployeeDetails", NextButtonText = "Next", IsPreviousEnabled = true });
             this.WizardInfoList.Add(new WizardInfo() { Text = "SUMMARY", Value = "EmployeeSummary", NextButtonText = "Finish", IsPreviousEnabled = true });
+
+            this._departmentList.Add("IT");
+            this._departmentList.Add("Admin");
+            this._departmentList.Add("HR");
+            this._departmentList.Add("Finance");
 
             this.SelectedWizardInfo = this.WizardInfoList[0];
             this.LoadWizardSettings();

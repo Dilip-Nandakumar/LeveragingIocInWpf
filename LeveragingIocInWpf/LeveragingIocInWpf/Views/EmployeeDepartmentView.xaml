@@ -6,7 +6,21 @@
              xmlns:local="clr-namespace:LeveragingIocInWpf.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ItemsPanelTemplate x:Key="ItemsPanelTemplate1">
+            <StackPanel/>
+        </ItemsPanelTemplate>
+        <Style  TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <RadioButton Margin="50,10,10,10"  GroupName="DepartmentSelection" Content="{Binding}" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI Light" FontSize="40" HorizontalContentAlignment="Center"  Foreground="#FF424242" IsChecked="{Binding IsSelected, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListBoxItem}}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
     <Grid>
-        <TextBlock FontSize="40">Employee Department</TextBlock>
+        <ListBox ItemsSource="{Binding DepartmentList}" SelectedItem="{Binding SelectedDepartment}" Grid.Row="1" ItemsPanel="{DynamicResource ItemsPanelTemplate1}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" />
     </Grid>
 </UserControl>

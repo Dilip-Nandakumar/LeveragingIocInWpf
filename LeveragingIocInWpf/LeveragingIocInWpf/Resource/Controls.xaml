@@ -5,7 +5,7 @@
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
                     xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Classic" xmlns:BallyGuiNativeControls="clr-namespace:BallyGuiNativeControls;assembly=BallyGuiNativeControls" xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" >
 
-    <Custom:Style TargetType="{x:Type Custom:TextBlock}">
+    <Custom:Style x:Key="tbstyle" TargetType="{x:Type Custom:TextBlock}">
         <Custom:Setter Property="FontSize" Value="40"/>
     </Custom:Style>
 </Custom:ResourceDictionary>
