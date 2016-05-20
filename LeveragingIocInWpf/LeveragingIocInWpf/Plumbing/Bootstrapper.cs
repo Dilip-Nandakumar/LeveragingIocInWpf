@@ -16,8 +16,9 @@ namespace LeveragingIocInWpf.Plumbing
         internal static IWindsorContainer InitializeContainer()
         {
             container = new WindsorContainer();
-            container.AddFacility<TypedFactoryFacility>();
-            container.Install(FromAssembly.This());
+            container.AddFacility<TypedFactoryFacility>(); // Provides automatically generated factories
+            container.Install(FromAssembly.This()); /* Instantiates the installers that implements IWindsorInstaller in this assesmbly
+                                                       and invokes the constructor */
             return container;
         }
     }
